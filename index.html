@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Notes</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                🌸 Bloom Notes
+            </div>
+
+            <div class="folder-top">
+
+                <h3>Folders</h3>
+
+                <button id="addFolderBtn" class="add-btn">
+                    + Folder
+                </button>
+
+            </div>
+
+            <div id="folderList" class="folder-list">
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="header">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search notes..."
+                    >
+
+                </div>
+
+                <button id="themeToggle" class="theme-btn">
+                    🌙
+                </button>
+
+            </header>
+
+
+            <!-- Notes Panel -->
+            <section class="notes-panel">
+
+                <div class="notes-header">
+
+                    <h2 id="folderTitle">
+                        Select Folder
+                    </h2>
+
+                    <button id="addNoteBtn" class="add-btn">
+                        + Note
+                    </button>
+
+                </div>
+
+                <div id="notesList" class="notes-list">
+
+                    <div class="empty-state">
+
+                        <h2>🌸 Welcome to Bloom Notes</h2>
+
+                        <br>
+
+                        <p>
+                            Create or select a folder to begin taking notes.
+                        </p>
+
+                        <br>
+
+                        <p>📁 Create a Folder</p>
+                        <p>📝 Create a Note</p>
+                        <p>✍️ Start Writing</p>
+                        <p>💾 Notes Save Automatically</p>
+
+                        <br>
+
+                        <p>✨ Happy Note Taking!</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Editor -->
+            <section class="editor-panel">
+
+                <div class="editor-header">
+
+                    <input
+                        type="text"
+                        id="noteTitle"
+                        placeholder="Note Title..."
+                    >
+
+                </div>
+
+                <!-- Toolbar -->
+                <div class="toolbar">
+
+                    <button id="boldBtn" title="Bold">
+                        <b>B</b>
+                    </button>
+
+                    <button id="underlineBtn" title="Underline">
+                        <u>U</u>
+                    </button>
+
+                    <button id="imageBtn" title="Add Image">
+                        🖼
+                    </button>
+
+                    <input
+                        type="file"
+                        id="imageInput"
+                        accept="image/*"
+                        hidden
+                    >
+
+                   <button id="saveNoteManualBtn">
+                    💾 Save Note
+                </button>
+                <button id="shareNoteBtn">
+                    📤 Share Note
+                </button>
+                <button id="deleteNoteBtn" class="danger-btn">
+                    🗑️ Delete Note
+                </button>
+                </div>
+
+                <!-- Editor -->
+                <div
+                    id="editor"
+                    class="editor"
+                    contenteditable="true"
+                ></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Folder Modal -->
+    <div id="folderModal" class="modal">
+
+        <div class="modal-content">
+
+            <h3>Folder Name</h3>
+
+            <input
+                type="text"
+                id="folderNameInput"
+                placeholder="Enter folder name"
+            >
+
+            <div class="modal-actions">
+
+                <button id="saveFolderBtn">
+                    Save
+                </button>
+
+                <button id="cancelFolderBtn">
+                    Cancel
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Note Modal -->
+    <div id="noteModal" class="modal">
+
+        <div class="modal-content">
+
+            <h3>Note Name</h3>
+
+            <input
+                type="text"
+                id="noteNameInput"
+                placeholder="Enter note title"
+            >
+
+            <div class="modal-actions">
+
+                <button id="saveNoteBtn">
+                    Save
+                </button>
+
+                <button id="cancelNoteBtn">
+                    Cancel
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
