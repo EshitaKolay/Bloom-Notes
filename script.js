@@ -396,16 +396,17 @@ imageInput.addEventListener("change", e => {
 
     reader.onload = function(event){
 
-        document.execCommand(
-            "insertImage",
-            false,
-            event.target.result
-        );
+        editor.focus();
 
-        saveCurrentNote();
+        const img = document.createElement("img");
+        img.src = event.target.result;
+
+        editor.appendChild(img);
     };
 
     reader.readAsDataURL(file);
+
+    imageInput.value = "";
 });
 
 /* -------------------- AUTO SAVE -------------------- */
@@ -463,6 +464,7 @@ saveNoteManualBtn.addEventListener("click", () => {
 
     saveData();
     renderNotes();
+    saveCurrentNote();
 
     alert("💾 Note Saved Successfully!");
 });
