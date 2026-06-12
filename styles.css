@@ -29,13 +29,14 @@ body.dark{
 body{
     background:var(--bg);
     color:var(--text);
-    height:100vh;
-    overflow:hidden;
+    min-height:100vh;
+    overflow-y:auto;
+    overflow-x:hidden;
 }
 
 .app{
     display:flex;
-    height:100vh;
+    min-height:100vh;
 }
 
 /* Sidebar */
